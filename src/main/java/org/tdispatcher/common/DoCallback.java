@@ -1,4 +1,4 @@
-package org.tdispatcher.fair;
+package org.tdispatcher.common;
 
 public class DoCallback<T> implements Runnable {
 

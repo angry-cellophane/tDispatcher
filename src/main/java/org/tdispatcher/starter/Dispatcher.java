@@ -1,6 +1,6 @@
 package org.tdispatcher.starter;
 
-import org.tdispatcher.fair.Callback;
+import org.tdispatcher.common.Callback;
 
 import java.util.List;
 import java.util.concurrent.Callable;

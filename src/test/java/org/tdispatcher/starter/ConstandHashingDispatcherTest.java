@@ -1,6 +1,7 @@
 package org.tdispatcher.starter;
 
-import org.tdispatcher.fair.Callback;
+import org.tdispatcher.common.Callback;
+import org.tdispatcher.utils.DummyTask;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -14,28 +15,14 @@ import java.util.stream.IntStream;
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertTrue;
 
-public class FairDispatcherTest {
-
-    private static class DummyTask implements Callable<Integer> {
-
-        public final int i;
-
-        private DummyTask(int i) {
-            this.i = i;
-        }
-
-        @Override
-        public Integer call() throws Exception {
-            return i;
-        }
-    }
+public class ConstandHashingDispatcherTest {
 
     /**
      * Simple test to check there are no exceptions
      */
     @Test
     public void simpleTest() throws InterruptedException {
-        final Dispatcher dispatcher = Dispatchers.newFairDispatcher();
+        final Dispatcher dispatcher = Dispatchers.newContantHashingDispatcher();
         try {
             AtomicBoolean isChanged = new AtomicBoolean(false);
 

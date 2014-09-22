@@ -1,8 +1,8 @@
 package org.tdispatcher.starter;
 
-import org.tdispatcher.fair.Callback;
-import org.tdispatcher.fair.Client;
-import org.tdispatcher.fair.FairTaskOrderer;
+import org.tdispatcher.common.Callback;
+import org.tdispatcher.common.Client;
+import org.tdispatcher.matrix.FairTaskOrderer;
 
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -10,13 +10,13 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
 
-public class FairDispatcher implements Dispatcher {
+public class MatrixFairDispatcher implements Dispatcher {
 
     private final ThreadPoolExecutor pool;
     private final List<Client<?>> clients;
     private final FairTaskOrderer fairTaskOrderer;
 
-    FairDispatcher(int nThreads) {
+    MatrixFairDispatcher(int nThreads) {
         pool = (ThreadPoolExecutor) Executors.newFixedThreadPool(nThreads);
         clients = new CopyOnWriteArrayList<>();
 

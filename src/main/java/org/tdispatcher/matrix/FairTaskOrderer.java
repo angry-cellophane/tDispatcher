@@ -1,4 +1,7 @@
-package org.tdispatcher.fair;
+package org.tdispatcher.matrix;
+
+import org.tdispatcher.common.Client;
+import org.tdispatcher.common.DoCallback;
 
 import java.util.Arrays;
 import java.util.List;
